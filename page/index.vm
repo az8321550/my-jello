@@ -1,0 +1,12 @@
+#extends("/page/layout/frame.vm")
+#block("title")
+这是title
+#end
+#block("body")
+
+#widget("/widget/header/header.vm" "var:menu=$menu")
+
+<h1>$title</h1>
+#end
+#require("./index.vm")
+#end

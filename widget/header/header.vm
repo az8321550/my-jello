@@ -1,0 +1,15 @@
+#if($menu)
+
+    #macro(renderMenu $menu)
+        #foreach($item in $menu)
+        <li>$item</li>
+        #end
+    #end
+
+    <nav>
+        <ul>
+            #renderMenu($menu)
+        </ul>
+    </nav>
+
+#end

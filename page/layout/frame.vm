@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+#html("/static/js/require.js")
+    #head()
+        <meta charset="utf-8"/>
+        <meta content="" name="description">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+        <title>#block("title")title#end</title>
+        #require("bootstrap/css/bootstrap.css")
+        #require("bootstrap/css/bootstrap-theme.css")
+        #require("/static/scss/global.scss")
+    #end
+
+    #body()
+    <div id="wrapper">
+        #block("body")
+        This is body.
+        #end
+    </div>
+    #end
+    #require("./frame.vm")
+#end 

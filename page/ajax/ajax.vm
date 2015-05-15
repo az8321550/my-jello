@@ -1,0 +1,18 @@
+#extends("/page/layout/frame.vm")
+#block("title")ajax test#end
+#block("body")
+<div class="container">
+    <h1>ajax</h1>
+    <button type="button" class="btn btn-default">ajax</button>
+</div>
+#end
+#script()
+require(["./data"],function(app){
+    app({
+        btn:".btn",
+        remote:"/test/data/data.json"
+    })
+})
+#end
+#require("./ajax.vm")
+#end
