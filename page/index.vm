@@ -1,12 +1,38 @@
 #extends("/page/layout/frame.vm")
-#block("title")
-这是title
-#end
-#block("body")
+    #block("title")
+        这是title
+    #end
+    #block("body")
+        #widget("/widget/header/header.vm" "var:menu=$menu")
+        <div class="container">
+            <div class="user-state">
+                <div class="user-name">
+                    #if($username)
+                        欢迎<strong>$username</strong>
+                    #else
+                        <a href="#">请登录</a>
+                    #end
+                </div>
+            </div>
 
-#widget("/widget/header/header.vm" "var:menu=$menu")
 
-<h1>$title</h1>
-#end
-#require("./index.vm")
+            <h1>${title}123123123</h1>
+            <h3>$esc.html($xxx)</h3>
+            <br>
+            <h4 class="emoji">:dancer::dash:</h4>
+        </div>
+        <div id="dialog" title="Basic dialog">
+            <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+        </div>
+
+        #widget("/widget/footer/footer.vm")
+    #end
+    #require('/components/jquery-ui/themes/base/all.css')
+    #require('underscore')
+    #require('jquery')
+    #require('/static/libs/layer/layer.js')
+    #require("./index.vm")
+    #script()
+    require(["./index"]);
+    #end
 #end

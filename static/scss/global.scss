@@ -1,22 +1,18 @@
-body {
-    padding-top: 50px;
-}
+@import "base";
+@import "ext/helper";
 
-.navbar-brand.active {
-    color: #eee;
+body{
+font-family: $fontYaHei;
 }
-
-#middle {
-    min-height: 400px;
+.container {
+    width: 1000px;
+    @include center-block;
 }
-
-.markdown {
-    h2 {
-        padding-top: 70px;
-        margin-top: -50px;
-    }
+@include clearfix();
+.user-state{
+    @include clearfix;
 }
-
-@import "callout";
-@import "highlight";
-@import "modal";
+.user-name{
+    margin-top: 10px;
+    @include float(right);
+}

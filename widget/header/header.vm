@@ -2,14 +2,25 @@
 
     #macro(renderMenu $menu)
         #foreach($item in $menu)
-        <li>$item</li>
+        <li>
+            <a href="$item.href">$item.label</a>
+            #if($item.children)
+                <ul class="child-menu">
+##                    #renderMenu($item.children)
+                </ul>
+            #end
+        </li>
         #end
     #end
 
-    <nav>
-        <ul>
-            #renderMenu($menu)
-        </ul>
+    <nav class="header">
+        <div class="container">
+            <ul class="menu">
+                #renderMenu($menu)
+            </ul>
+        </div>
     </nav>
-
+    #script()
+    require(['./header']);
+    #end
 #end

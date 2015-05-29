@@ -2,6 +2,7 @@
 require("bootstrap/button");
 var $=require("jquery");
 var alert=require("libs/alert");
+require("./data_test")();
 
 var app=module.exports=function(options){
     $(options.btn).click(function () {

@@ -1,0 +1,10 @@
+#extends("/page/layout/frame.vm")
+    #block("title")
+        这是测试只有头部的
+    #end
+    #block("body")
+        #widget("/widget/header/header.vm" "var:menu=$menu")
+        #widget("/widget/footer/footer.vm")
+    #end
+    #require("./headfoot.vm")
+#end

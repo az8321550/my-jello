@@ -1,0 +1,52 @@
+$formHorizontalSwitch:true;
+$formMsgSwitch:true;
+$formEleHeight:30px;
+$fontFilePath:"/static/components/sasscore/ext/font-face/fonts/fontawesome-webfont";
+@import "base";
+@import "ext/btn";
+@import "ext/form";
+@import "ext/font-face/font-face";
+@import "ext/animate/attention-seekers";
+
+body{
+  font-family: $fontYaHei;
+}
+
+.container{
+  width: 1000px;
+  margin: 0 auto;
+}
+.btn-go{
+  @include btn-size(50px,40px,16px);
+  @include btn-color($green,#fff);
+}
+.foo{
+  margin-top: 20px;
+  width: 200px;
+  height: 200px;
+  background: $purple;
+  &:hover{
+    @extend .shake;
+    width: 400px;
+  }
+  @include box-shadow(0 5px 10px #000);
+  @include user-select(all);
+  @include transform(rotate(60deg));
+  @include transition(width,.3s,ease);
+  @include center-block;
+  @include float(right);
+  @include clearfix();
+}
+@include animate-shake;
+
+@include font-icon(music);
+li{
+  @include ellipsis(50px);
+  @include opacity(50);
+}
+.triangle{
+  @include triangle(top, 10px, $purple);
+}
+ul{
+  @include ul-has-style;
+}
